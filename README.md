@@ -1,2 +1,0 @@
-# Lending
-Created with CodeSandbox
