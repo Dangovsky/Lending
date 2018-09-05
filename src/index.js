@@ -10,9 +10,15 @@ class Navigation extends React.Component {
       <div>
         <nav className="cyan darken-4">
           <div className="nav-wrapper ">
-            <a href="#" className="brand-logo">
-              <h5>Проффесиональная ориентация и помощь</h5>
-            </a>
+            <div className="valign-wrapper">
+              <a href="#" className="brand-logo">
+                <h5 className="flow-text">
+                  <br />
+                  <br />
+                  Проффесиональная ориентация<br />и помощь
+                </h5>
+              </a>
+            </div>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
                 <a href="#">Консультация</a>
@@ -44,7 +50,7 @@ class App extends React.Component {
             <div className="container">
               <br />
               <br />
-              <h1 className="header center cyan-text text-darken-4">Привет!</h1>
+              <h1 className="header cyan-text text-darken-4 center">Пам</h1>
               <div className="row center" />
               <div className="row center">
                 <h5 className="header col s12 light">Пам-па-пам</h5>
@@ -54,7 +60,7 @@ class App extends React.Component {
             </div>
           </div>
           <div className="parallax">
-            <img src="https://pp.userapi.com/c847121/v847121781/8b5c1/T4OHxpu5aC0.jpg" />
+            <img src="https://pp.userapi.com/c847019/v847019454/324e/krXYRNvkx8Y.jpg" />
           </div>
         </div>
 
@@ -63,16 +69,12 @@ class App extends React.Component {
             <div className="row">
               <div className="col s12 m6 center">
                 <img
-                  class="circle"
-                  src="https://pp.userapi.com/c834402/v834402244/e9e27/ZSBGzGiOxgg.jpg?ava=1"
+                  className="circle"
+                  src="https://pp.userapi.com/c845324/v845324511/e115c/JxaK2vhpgVM.jpg"
                 />
-                <h3>
-                  <i className="mdi-content-send brown-text" />
-                </h3>
-                <h4>Дмитрий Теньков</h4>
               </div>
-              <div className="col s12 m4 offset-m1 center">
-                <br />
+              <div className="col s12 m6 center">
+                <h4>Дмитрий Теньков</h4>
                 <p className="left-align light">
                   Для того, чтобы помочь вам в построении карьеры мне
                   потребуется узнать вас получше. Мы можем сделать это как в
@@ -96,6 +98,15 @@ class App extends React.Component {
               <h1 className="header center cyan-text text-darken-4">
                 Что мы предлагаем?
               </h1>
+              <div className="row center hide-on-med-and-up">
+                <h5 className="header col s12 light">
+                  Кратко расскажите о себе
+                </h5>
+                <h5 className="header col s12 light">Пройдите тест</h5>
+                <h5 className="header col s12 light">
+                  Получите консультацию в видео-чате
+                </h5>
+              </div>
               <div className="row center">
                 <div className="col s12 m4 hide-on-small-only">
                   <div className="icon-block">
@@ -129,7 +140,7 @@ class App extends React.Component {
             </div>
           </div>
           <div className="parallax">
-            <img src="https://pp.userapi.com/c845323/v845323160/6a55a/T--IooqlTE0.jpg" />
+            <img src="https://pp.userapi.com/c840128/v840128823/7b039/39SEeI6blJA.jpg" />
           </div>
         </div>
 
@@ -137,7 +148,7 @@ class App extends React.Component {
           <div className="section">
             <div className="row">
               <div className="col s12 m6 xl5 offset-xl1">
-                <div className="card">
+                <div className="card hoverable">
                   <div className="card-image waves-effect waves-block waves-light">
                     <img
                       className="activator"
@@ -176,7 +187,7 @@ class App extends React.Component {
                 </div>
               </div>
               <div className="col s12 m6 xl5 offset-xl1">
-                <div className="card">
+                <div className="card hoverable">
                   <div className="card-image waves-effect waves-block waves-light">
                     <img
                       className="activator"
@@ -216,14 +227,90 @@ class App extends React.Component {
           </div>
         </div>
 
-        <footer class="page-footer cyan darken-4">
-          <div class="container">
-            <div class="row">
-              <div class="col s12 m6">па-па-па</div>
+        <div className="parallax-container ">
+          <div className="section no-pad-bot">
+            <div className="container">
+              <br />
+              <br />
+              <h1 className="header center cyan-text text-darken-4">
+                Давайте начинать!
+              </h1>
+              <div className="row center">
+                <h5 className="header col s12 light">
+                  Расскажите как нам связаться с вами
+                </h5>
+              </div>
             </div>
           </div>
-          <div class="footer-copyright">
-            <div class="container">Made by Ten</div>
+          <div className="parallax">
+            <img src="https://pp.userapi.com/c845323/v845323160/6a55a/T--IooqlTE0.jpg" />
+          </div>
+        </div>
+        <div className="container">
+          <div className="section">
+            <div className="row">
+              <div className="input-field col s12 m8">
+                <select>
+                  <option value="" disabled selected>
+                    Выберите один вариант
+                  </option>
+                  <option value="1">Личная</option>
+                  <option value="2">Заочная</option>
+                  <option value="3">Помоги с выбором</option>
+                  //todo
+                </select>
+                <label>Консультация</label>
+              </div>
+            </div>
+            <div className="row">
+              <div className="input-field col s12 m4">
+                <input id="name" type="text" className="validate" />
+                <label htmlFor="name">Имя</label>
+              </div>
+              <div className="input-field col s12 m4">
+                <input id="first_name" type="text" className="validate" />
+                <label htmlFor="first_name">Возраст</label>
+              </div>
+            </div>
+            <div className="row">
+              <div className="input-field col s12 m8">
+                <select multiple>
+                  <option value="0" disabled selected>
+                    Выберите один или несколько вариантов
+                  </option>
+                  <option value="1">Почта</option>
+                  <option value="2">Telegram</option>
+                  <option value="3">Whatsapp</option>
+                  <option value="4">Да-да, тут все не совсем работает</option>
+                </select>
+                <label>Где с вами можно связаться?</label>
+              </div>
+            </div>
+            // тут будут появляться только те поля, которые нужны для выбранных
+            вариантов
+            <div className="row">
+              <div className="input-field col s12 m8">
+                <input id="email" type="email" className="validate" />
+                <label htmlFor="email">Email</label>
+              </div>
+            </div>
+            <div className="row">
+              <div className="input-field col s12 m8">
+                <input id="first_name" type="text" className="validate" />
+                <label htmlFor="first_name">Телефон</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer className="page-footer cyan darken-4">
+          <div className="container">
+            <div className="row">
+              <div className="col s12 m6">па-па-па</div>
+            </div>
+          </div>
+          <div className="footer-copyright">
+            <div className="container">Made by Ten</div>
           </div>
         </footer>
       </div>
