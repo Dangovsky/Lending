@@ -45,51 +45,6 @@ class App extends React.Component {
       <div>
         <Navigation />
 
-        <div className="parallax-container">
-          <div className="section no-pad-bot">
-            <div className="container">
-              <br />
-              <br />
-              <h1 className="header cyan-text text-darken-4 center">Пам</h1>
-              <div className="row center" />
-              <div className="row center">
-                <h5 className="header col s12 light">Пам-па-пам</h5>
-              </div>
-              <br />
-              <br />
-            </div>
-          </div>
-          <div className="parallax">
-            <img src="https://pp.userapi.com/c847019/v847019454/324e/krXYRNvkx8Y.jpg" />
-          </div>
-        </div>
-
-        <div className="container">
-          <div className="section">
-            <div className="row">
-              <div className="col s12 m6 center">
-                <img
-                  className="circle"
-                  src="https://pp.userapi.com/c845324/v845324511/e115c/JxaK2vhpgVM.jpg"
-                />
-              </div>
-              <div className="col s12 m6 center">
-                <h4>Дмитрий Теньков</h4>
-                <p className="left-align light">
-                  Для того, чтобы помочь вам в построении карьеры мне
-                  потребуется узнать вас получше. Мы можем сделать это как в
-                  ходе личного общения, так и с помощью предварительного
-                  тестирования. Очевидно, что лучше всего мы разберёмся в ваших
-                  целях, если совместим оба подхода. Однако этот путь не
-                  единственный. Я готов предоставить вам рекомендации заочно. Я
-                  направлю их после анализа результатов теста и вашего
-                  сопроводительного письма.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div className="parallax-container ">
           <div className="section no-pad-bot">
             <div className="container">
@@ -222,6 +177,51 @@ class App extends React.Component {
                     </p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="parallax-container">
+          <div className="section no-pad-bot">
+            <div className="container">
+              <br />
+              <br />
+              <h1 className="header cyan-text text-darken-4 center">Кто мы?</h1>
+              <div className="row center" />
+              <div className="row center">
+                <h5 className="header col s12 light">Пам-па-пам</h5>
+              </div>
+              <br />
+              <br />
+            </div>
+          </div>
+          <div className="parallax">
+            <img src="https://pp.userapi.com/c847019/v847019454/324e/krXYRNvkx8Y.jpg" />
+          </div>
+        </div>
+
+        <div className="container">
+          <div className="section">
+            <div className="row">
+              <div className="col s12 m6 center">
+                <img
+                  className="circle"
+                  src="https://pp.userapi.com/c845324/v845324511/e115c/JxaK2vhpgVM.jpg"
+                />
+              </div>
+              <div className="col s12 m6 center">
+                <h4>Дмитрий Теньков</h4>
+                <p className="left-align light">
+                  Для того, чтобы помочь вам в построении карьеры мне
+                  потребуется узнать вас получше. Мы можем сделать это как в
+                  ходе личного общения, так и с помощью предварительного
+                  тестирования. Очевидно, что лучше всего мы разберёмся в ваших
+                  целях, если совместим оба подхода. Однако этот путь не
+                  единственный. Я готов предоставить вам рекомендации заочно. Я
+                  направлю их после анализа результатов теста и вашего
+                  сопроводительного письма.
+                </p>
               </div>
             </div>
           </div>
