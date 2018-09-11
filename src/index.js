@@ -12,10 +12,15 @@ class Navigation extends React.Component {
           <div className="nav-wrapper ">
             <div className="valign-wrapper">
               <a href="#" className="brand-logo">
-                <h5 className="flow-text">
+                <h5 className="flow-text hide-on-med-and-down">
                   <br />
                   <br />
-                  Проффесиональная ориентация<br />и помощь
+                  &nbsp;&nbsp;&nbsp;Проффесиональная&nbsp;ориентация<br />&nbsp;&nbsp;&nbsp;и&nbsp;помощь
+                </h5>
+                <h5 className="flow-text hide-on-large-only">
+                  <br />
+                  <br />
+                  Проффесиональная&nbsp;ориентация<br />и&nbsp;помощь
                 </h5>
               </a>
             </div>
@@ -37,6 +42,116 @@ class Navigation extends React.Component {
   }
 }
 
+class Form extends React.Component {
+  state = {
+    email: true,
+    phone: false
+  };
+  data = {};
+
+  handleSubmit = event => {
+    event.preventDefault();
+  };
+
+  handleConnectSelect = event => {
+    this.setState({
+      email: false,
+      phone: false
+    });
+
+    const selected = [...event.target.options]
+      .filter(o => o.selected)
+      .map(o => o.value);
+    this.data.selectOpt = selected;
+
+    for (var i = 0; i < selected.length; i++) {
+      selected[i] === "email"
+        ? this.setState({ email: true })
+        : this.setState({ phone: true });
+    }
+  };
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <div className="row">
+          <div className="input-field col s12 m8">
+            <select ref={node => (this.typeSelectNode = node)}>
+              <option value="" disabled selected>
+                Выберите один вариант
+              </option>
+              <option value="1">Личная</option>
+              <option value="2">Заочная</option>
+              <option value="3">Помоги с выбором</option>
+              //todo
+            </select>
+            <label>Консультация</label>
+          </div>
+        </div>
+        <div className="row">
+          <div className="input-field col s12 m4">
+            <input
+              id="name"
+              type="text"
+              className="validate"
+              ref={node => (this.nameNode = node)}
+            />
+            <label htmlFor="name">Имя</label>
+          </div>
+          <div className="input-field col s12 m4">
+            <input
+              id="age"
+              type="text"
+              className="validate"
+              ref={node => (this.ageNode = node)}
+            />
+            <label htmlFor="age">Возраст</label>
+          </div>
+        </div>
+        <div className="row">
+          <div className="input-field col s12 m8">
+            <select
+              multiple
+              ref={node => (this.connectNode = node)}
+              onChange={this.handleConnectSelect}
+            >
+              <option value="email">Почта</option>
+              <option value="telegram">Telegram</option>
+              <option value="whatsapp">Whatsapp</option>
+            </select>
+            <label>Где с вами можно связаться?</label>
+          </div>
+        </div>
+        {this.state.email ? (
+          <div className="row">
+            <div className="input-field col s12 m8">
+              <input id="email" type="email" className="validate" />
+              <label htmlFor="email">Email</label>
+            </div>
+          </div>
+        ) : null}
+        {this.state.phone ? (
+          <div className="row">
+            <div className="input-field col s12 m8">
+              <input id="phone" type="text" className="validate" />
+              <label htmlFor="phone">Телефон</label>
+            </div>
+          </div>
+        ) : null}
+        <div className="raw">
+          <button
+            className="btn waves-effect waves-light"
+            type="submit"
+            name="action"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    );
+  }
+}
+
 class App extends React.Component {
   color = {};
 
@@ -45,21 +160,73 @@ class App extends React.Component {
       <div>
         <Navigation />
 
+        <div className="parallax-container">
+          <div className="section no-pad-bot">
+            <div className="container">
+              <br />
+              <br />
+              <h1 className="header cyan-text text-darken-4 center">Привет</h1>
+              <div className="row center" />
+              <br />
+              <br />
+            </div>
+          </div>
+          <div className="parallax">
+            <img src="https://pp.userapi.com/c847019/v847019454/324e/krXYRNvkx8Y.jpg" />
+          </div>
+        </div>
+
+        <div className="container">
+          <div className="section">
+            <div className="row">
+              <div className="col s12 m6 left-align light">
+                Меня зовут Дмитрий Теньков. Более десяти лет я нанимаю и обучаю
+                персонал. У меня есть опыт сотрудничества с крупными
+                федеральными работодателями и простыми предпринимателями из
+                регионов. Поэтому я уверен, что хорошо знаком с реальным
+                положением дел на рынке труда. Я сделал этот сайт, чтобы помочь
+                вам в построении своей уникальной карьеры.
+              </div>
+            </div>
+            <div className="row">
+              <div className="col s12 m6 center">
+                <img
+                  className="circle"
+                  src="https://pp.userapi.com/c845324/v845324511/e115c/JxaK2vhpgVM.jpg"
+                />
+              </div>
+              <div className="col s12 m6 center">
+                <h4>Дмитрий Теньков</h4>
+                <p className="left-align light">
+                  Для того, чтобы мои рекомендации были максимально полезными,
+                  нам потребуется узнать друг друга получше. Для этого я
+                  предложу тебе пройти профессиональный тест и написать о себе
+                  небольшое письмо. После этого мы проведём консультацию
+                  посредством видеозвонка в одном из ваших любимых мессенджеров.
+                  Однако этот путь не единственный. Я готов предоставить вам
+                  свои рекомендации заочно. Вы получите их после анализа
+                  результатов теста и вашего сопроводительного письма.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="parallax-container ">
           <div className="section no-pad-bot">
             <div className="container">
               <br />
               <br />
               <h1 className="header center cyan-text text-darken-4">
-                Что мы предлагаем?
+                Как получить консультацию?
               </h1>
               <div className="row center hide-on-med-and-up">
                 <h5 className="header col s12 light">
-                  Кратко расскажите о себе
+                  Кратко расскажите о себе!
                 </h5>
-                <h5 className="header col s12 light">Пройдите тест</h5>
+                <h5 className="header col s12 light">Пройдите тест!</h5>
                 <h5 className="header col s12 light">
-                  Получите консультацию в видео-чате
+                  Получите консультацию в видео-чате!
                 </h5>
               </div>
               <div className="row center">
@@ -101,6 +268,11 @@ class App extends React.Component {
 
         <div className="container">
           <div className="section">
+            <div className="row">
+              <div className="center cyan-text text-darken-4">
+                <h3>Сколько это стоит?</h3>
+              </div>
+            </div>
             <div className="row">
               <div className="col s12 m6 xl5 offset-xl1">
                 <div className="card hoverable">
@@ -166,62 +338,19 @@ class App extends React.Component {
                       </i>
                     </span>
                     <p>
-                      Вы получаете краткий очерк о ваших личностных особенностях
-                      и оплачиваете консультацию. После - мы проводим часовую
+                      Вы описываете свою ситуацию и проходите тестирование. Всё
+                      как в заочном варианте. После тестирования вы получаете
+                      краткий очерк о ваших личностных особенностях и
+                      оплачиваете консультацию. После - мы проводим часовую
                       сессию: обсуждаем возможные пути развития карьеры, и
-                      составляем план дальнейших действий на основе ваших
-                      индивидуальных особенностей и актуальной ситуации на
-                      рынке.<br />
+                      составляем план дальнейших действий. Разумеется, все
+                      рекомендации предлагаются на основе ваших индивидуальных
+                      особенностей и актуальной ситуации на рынке труда. рынке.<br />
                       Стоимость: 1700 рублей<br /> Срок проведения консультации:
                       не позднее трёх дней после заполнения теста.
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="parallax-container">
-          <div className="section no-pad-bot">
-            <div className="container">
-              <br />
-              <br />
-              <h1 className="header cyan-text text-darken-4 center">Кто мы?</h1>
-              <div className="row center" />
-              <div className="row center">
-                <h5 className="header col s12 light">Пам-па-пам</h5>
-              </div>
-              <br />
-              <br />
-            </div>
-          </div>
-          <div className="parallax">
-            <img src="https://pp.userapi.com/c847019/v847019454/324e/krXYRNvkx8Y.jpg" />
-          </div>
-        </div>
-
-        <div className="container">
-          <div className="section">
-            <div className="row">
-              <div className="col s12 m6 center">
-                <img
-                  className="circle"
-                  src="https://pp.userapi.com/c845324/v845324511/e115c/JxaK2vhpgVM.jpg"
-                />
-              </div>
-              <div className="col s12 m6 center">
-                <h4>Дмитрий Теньков</h4>
-                <p className="left-align light">
-                  Для того, чтобы помочь вам в построении карьеры мне
-                  потребуется узнать вас получше. Мы можем сделать это как в
-                  ходе личного общения, так и с помощью предварительного
-                  тестирования. Очевидно, что лучше всего мы разберёмся в ваших
-                  целях, если совместим оба подхода. Однако этот путь не
-                  единственный. Я готов предоставить вам рекомендации заочно. Я
-                  направлю их после анализа результатов теста и вашего
-                  сопроводительного письма.
-                </p>
               </div>
             </div>
           </div>
@@ -248,58 +377,7 @@ class App extends React.Component {
         </div>
         <div className="container">
           <div className="section">
-            <div className="row">
-              <div className="input-field col s12 m8">
-                <select>
-                  <option value="" disabled selected>
-                    Выберите один вариант
-                  </option>
-                  <option value="1">Личная</option>
-                  <option value="2">Заочная</option>
-                  <option value="3">Помоги с выбором</option>
-                  //todo
-                </select>
-                <label>Консультация</label>
-              </div>
-            </div>
-            <div className="row">
-              <div className="input-field col s12 m4">
-                <input id="name" type="text" className="validate" />
-                <label htmlFor="name">Имя</label>
-              </div>
-              <div className="input-field col s12 m4">
-                <input id="first_name" type="text" className="validate" />
-                <label htmlFor="first_name">Возраст</label>
-              </div>
-            </div>
-            <div className="row">
-              <div className="input-field col s12 m8">
-                <select multiple>
-                  <option value="0" disabled selected>
-                    Выберите один или несколько вариантов
-                  </option>
-                  <option value="1">Почта</option>
-                  <option value="2">Telegram</option>
-                  <option value="3">Whatsapp</option>
-                  <option value="4">Да-да, тут все не совсем работает</option>
-                </select>
-                <label>Где с вами можно связаться?</label>
-              </div>
-            </div>
-            // тут будут появляться только те поля, которые нужны для выбранных
-            вариантов
-            <div className="row">
-              <div className="input-field col s12 m8">
-                <input id="email" type="email" className="validate" />
-                <label htmlFor="email">Email</label>
-              </div>
-            </div>
-            <div className="row">
-              <div className="input-field col s12 m8">
-                <input id="first_name" type="text" className="validate" />
-                <label htmlFor="first_name">Телефон</label>
-              </div>
-            </div>
+            <Form />
           </div>
         </div>
 
